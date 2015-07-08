@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="ZooClub.Animal" table="Animal">
+		<id name="id" type="int" column="animalId">
+			<generator class="increment"></generator>
+		</id>
+		<property name="type" type="string" column="type"></property>
+		<property name="name" type="string" column="name"></property>
+		<many-to-one name="owner" class="ZooClub.Person"
+			column="personId"></many-to-one>
+	</class>
+</hibernate-mapping>
